@@ -1,0 +1,41 @@
+package D_022_23_05_Darko_Pecanac_NS117QA5;
+
+public class Planina {
+
+  // dp: Attributes
+  private String imePlanine;
+  private String drzavaPlanine;
+  private int visinaPlanine;
+
+  // dp: Constructors
+  public Planina() {
+  }
+
+  public Planina(String imePlanine, String drzavaPlanine, int visinaPlanine) {
+    this.imePlanine = imePlanine;
+    this.drzavaPlanine = drzavaPlanine;
+    this.visinaPlanine = visinaPlanine;
+  }
+
+  // dp: Getters and Setters
+  public String getImePlanine() {
+    return imePlanine;
+  }
+  public void setImePlanine(String imePlanine) {
+    this.imePlanine = imePlanine;
+  }
+
+  public String getDrzavaPlanine() {
+    return drzavaPlanine;
+  }
+  public void setDrzavaPlanine(String drzavaPlanine) {
+    this.drzavaPlanine = drzavaPlanine;
+  }
+
+  public int getVisinaPlanine() {
+    return visinaPlanine;
+  }
+  public void setVisinaPlanine(int visinaPlanine) {
+    this.visinaPlanine = visinaPlanine;
+  }
+}
