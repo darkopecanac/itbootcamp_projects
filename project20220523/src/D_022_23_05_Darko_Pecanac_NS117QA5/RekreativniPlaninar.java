@@ -1,3 +1,18 @@
+/* RAD NA CASU, 23. 05. 2022. i DOMACI ZADATAK 1.
+ *
+ * Kreirati klasu RekreativniPlaninar, koja pored svega sto ima Planinar ima i:
+ *    - masu opreme (kg) koju nosi (celobrojna je vrednost, npr. 20 kg),
+ *    - naziv okruga odakle je rekreativni planinar i
+ *    - maksimalni uspon koji planinar moze da savlada bez opreme (npr. 2000 m).
+ * Da li će se rekreativni planinar uspešno popeti na planinu zavisi
+ *    - da li je njegov najveći uspon manji od visine planine, s tim da oprema dodatno otežava penjanje i
+ *      za svaki kilogram opreme koji nosi može da pređe 50 metara manje.
+ * Rekeativci placaju clanarinu u iznosu od 1000 rsd.
+ * Metoda koja ispisuje podatke o planinaru ispisuje ih u sledecem formatu:
+ *    Rekreativac, id: id
+ *    Ime: ime prezime Okrug: okrug
+ */
+
 package D_022_23_05_Darko_Pecanac_NS117QA5;
 
 public class RekreativniPlaninar extends Planinar {
@@ -54,11 +69,12 @@ public class RekreativniPlaninar extends Planinar {
 
   // dp: Methods
   @Override
-  public String toString() {
-    return
+  public void stampaj() {
+    System.out.println(
             "\nRerekativac, id : " + super.getId_planinara() +
             "\nIme: " + super.getImePlaninara() + " " + super.getPrezimePlaninara() +
-            " Okrug: " + this.getOkrugRekreativnogPlaninara();
+            " Okrug: " + this.getOkrugRekreativnogPlaninara()
+    );
   }
 
   @Override

@@ -1,3 +1,12 @@
+/* RAD NA CASU, 23. 05. 2022. i DOMACI ZADATAK 1.
+ *
+ * Kreirati klasu Planina koju opisuju
+ *    - ime planine,
+ *    - naziv drzave u kojoj se nalazi i
+ *    - visina planine.
+ * Klasa mora imati konstruktore, getere i setere.
+ */
+
 package D_022_23_05_Darko_Pecanac_NS117QA5;
 
 public class Planina {

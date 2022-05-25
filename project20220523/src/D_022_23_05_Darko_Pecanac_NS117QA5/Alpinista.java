@@ -1,3 +1,15 @@
+/* RAD NA CASU, 23. 05. 2022. i DOMACI ZADATAK 1.
+ *
+ * Kreirati klasu Alpinista koji dodatno pamti
+ *    - koliko poena je alpinista ostvario, celobrojna vrednost, a oni se mogu menjati kroz adekvatnu metodu.
+ *    - Alpinista moze da savlada sve uspone do 4000 metara.
+ * Placa clanarinu u iznosu od 1500, pri tom za svaki poen ima popust od 50,
+ * a informacije o alpinisti se ispisuju u formatu:
+ *    Alpinista, id: id
+ *    Ime: ime prezime
+ *    Broj poena: poeni
+ */
+
 package D_022_23_05_Darko_Pecanac_NS117QA5;
 
 public class Alpinista extends Planinar {
@@ -12,7 +24,12 @@ public class Alpinista extends Planinar {
     super();
   }
 
-  public Alpinista(int id_planinara, String imePlaninara, String prezimePlaninara, int brojPoenaApliniste, int maxUsponAlpiniste, int visinaClanarineAlpiniste) {
+  public Alpinista(int id_planinara,
+                   String imePlaninara,
+                   String prezimePlaninara,
+                   int brojPoenaApliniste,
+                   int maxUsponAlpiniste,
+                   int visinaClanarineAlpiniste) {
     super(id_planinara, imePlaninara, prezimePlaninara);
     this.brojPoenaApliniste = brojPoenaApliniste;
     this.maxUsponAlpiniste = maxUsponAlpiniste;
@@ -20,7 +37,6 @@ public class Alpinista extends Planinar {
   }
 
   // dp: Getters and Setters
-
   public int getBrojPoenaApliniste() {
     return brojPoenaApliniste;
   }
@@ -44,11 +60,12 @@ public class Alpinista extends Planinar {
 
   // dp: Methods
   @Override
-  public String toString() {
-    return
+  public void stampaj() {
+    System.out.println(
             "\nAlpinista, id : " + super.getId_planinara() +
             "\nIme: " + super.getImePlaninara() + " " + super.getPrezimePlaninara() +
-            " Broj poena: " + this.getBrojPoenaApliniste();
+            " Broj poena: " + this.getBrojPoenaApliniste()
+    );
   }
 
   // Placa clanarinu u iznosu od 1500, pri tom za svaki poen ima popust od 50,
