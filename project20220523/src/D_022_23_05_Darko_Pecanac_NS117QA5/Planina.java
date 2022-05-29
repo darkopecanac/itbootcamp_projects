@@ -23,7 +23,7 @@ public class Planina {
   public Planina(String imePlanine, String drzavaPlanine, int visinaPlanine) {
     this.imePlanine = imePlanine;
     this.drzavaPlanine = drzavaPlanine;
-    this.visinaPlanine = visinaPlanine;
+    setVisinaPlanine(visinaPlanine);
   }
 
   // dp: Getters and Setters
@@ -45,6 +45,9 @@ public class Planina {
     return visinaPlanine;
   }
   public void setVisinaPlanine(int visinaPlanine) {
-    this.visinaPlanine = visinaPlanine;
+    if ( visinaPlanine > 0 )
+      this.visinaPlanine = visinaPlanine;
+    else
+      System.out.println("Uneli ste pogresnu vrednost za visinu planine!");
   }
 }

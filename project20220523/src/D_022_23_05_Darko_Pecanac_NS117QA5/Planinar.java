@@ -17,7 +17,7 @@ package D_022_23_05_Darko_Pecanac_NS117QA5;
 public abstract class Planinar {
 
   // dp: Attributes
-  private int id_planinara;
+  private int idPlaninara;
   private String imePlaninara;
   private String prezimePlaninara;
 
@@ -25,15 +25,18 @@ public abstract class Planinar {
   public Planinar() {
   }
 
-  public Planinar(int id_planinara, String imePlaninara, String prezimePlaninara) {
-    this.id_planinara = id_planinara;
+  public Planinar(int idPlaninara, String imePlaninara, String prezimePlaninara) {
+    if ( idPlaninara > 0 )
+      this.idPlaninara = idPlaninara;
+    else
+      System.out.println("Uneli ste pogresnu vrednost za identifikacioni broj!");
     this.imePlaninara = imePlaninara;
     this.prezimePlaninara = prezimePlaninara;
   }
 
   // dp: Getters
-  public int getId_planinara() {
-    return id_planinara;
+  public int getIdPlaninara() {
+    return idPlaninara;
   }
 
   public String getImePlaninara() {

@@ -18,7 +18,7 @@ package D_022_23_05_Darko_Pecanac_NS117QA5;
 public class RekreativniPlaninar extends Planinar {
 
   // dp: Attributes
-  private int tezinaOpremeRekreativnogPlaninara;
+  private int masaOpremeRekreativnogPlaninara;
   private String okrugRekreativnogPlaninara;
   private int maxUsponRekreativnogPlaninaraBezOpreme = 2000;
   private int visinaClanarineRekreativnogPlaninara = 1000;
@@ -32,21 +32,24 @@ public class RekreativniPlaninar extends Planinar {
           int id_planinara,
           String imePlaninara,
           String prezimePlaninara,
-          int tezinaOpreme,
+          int masaOpreme,
           String okrugPlaninara,
           int maxUsponPlaninara) {
     super(id_planinara, imePlaninara, prezimePlaninara);
-    this.tezinaOpremeRekreativnogPlaninara = tezinaOpreme;
+    setMasaOpremeRekreativnogPlaninara(masaOpreme);
     this.okrugRekreativnogPlaninara = okrugPlaninara;
-    this.maxUsponRekreativnogPlaninaraBezOpreme = maxUsponPlaninara;
+    setMaxUsponRekreativnogPlaninaraBezOpreme(maxUsponPlaninara);
   }
 
   // dp: Getters and Setters
-  public int getTezinaOpremeRekreativnogPlaninara() {
-    return tezinaOpremeRekreativnogPlaninara;
+  public int getMasaOpremeRekreativnogPlaninara() {
+    return masaOpremeRekreativnogPlaninara;
   }
-  public void setTezinaOpremeRekreativnogPlaninara(int tezinaOpremeRekreativnogPlaninara) {
-    this.tezinaOpremeRekreativnogPlaninara = tezinaOpremeRekreativnogPlaninara;
+  public void setMasaOpremeRekreativnogPlaninara(int masaOpreme) {
+    if ( masaOpreme >= 0 )
+      this.masaOpremeRekreativnogPlaninara = masaOpreme;
+    else
+      System.out.println("Uneli ste pogresnu vrednost za masu opreme rekreativnog planinara!");
   }
 
   public String getOkrugRekreativnogPlaninara() {
@@ -61,7 +64,10 @@ public class RekreativniPlaninar extends Planinar {
   }
 
   public void setMaxUsponRekreativnogPlaninaraBezOpreme(int maxUsponRekreativnogPlaninaraBezOpreme) {
-    this.maxUsponRekreativnogPlaninaraBezOpreme = maxUsponRekreativnogPlaninaraBezOpreme;
+    if ( maxUsponRekreativnogPlaninaraBezOpreme > 0 )
+      this.maxUsponRekreativnogPlaninaraBezOpreme = maxUsponRekreativnogPlaninaraBezOpreme;
+    else
+      System.out.println("Uneli ste pogresnu vrednost za maksimalan uspon rekreativnog planinara!");
   }
   public int getVisinaClanarineRekreativnogPlaninara() {
     return visinaClanarineRekreativnogPlaninara;
@@ -71,7 +77,7 @@ public class RekreativniPlaninar extends Planinar {
   @Override
   public void stampaj() {
     System.out.println(
-            "\nRerekativac, id : " + super.getId_planinara() +
+            "\nRerekativac, id : " + super.getIdPlaninara() +
             "\nIme: " + super.getImePlaninara() + " " + super.getPrezimePlaninara() +
             " Okrug: " + this.getOkrugRekreativnogPlaninara()
     );
@@ -82,11 +88,15 @@ public class RekreativniPlaninar extends Planinar {
     return this.getVisinaClanarineRekreativnogPlaninara();
   }
 
+/* Da li će se rekreativni planinar uspešno popeti na planinu zavisi
+ *    - da li je njegov najveći uspon manji od visine planine, s tim da oprema dodatno otežava penjanje i
+ *      za svaki kilogram opreme koji nosi može da pređe 50 metara manje.
+ */
   @Override
   public boolean uspesanUsponPlaninara(Planina planina) {
     int umanjenaVisinaMaxUsponaRekreatinvogPlaninara =
             this.getMaxUsponRekreativnogPlaninaraBezOpreme() -
-            this.getTezinaOpremeRekreativnogPlaninara() * 50;
+            this.getMasaOpremeRekreativnogPlaninara() * 50;
 
     if ( planina.getVisinaPlanine() <= umanjenaVisinaMaxUsponaRekreatinvogPlaninara )
       return true;

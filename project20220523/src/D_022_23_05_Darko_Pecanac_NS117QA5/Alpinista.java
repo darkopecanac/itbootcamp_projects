@@ -32,7 +32,7 @@ public class Alpinista extends Planinar {
                    int visinaClanarineAlpiniste) {
     super(id_planinara, imePlaninara, prezimePlaninara);
     this.brojPoenaApliniste = brojPoenaApliniste;
-    this.maxUsponAlpiniste = maxUsponAlpiniste;
+    setMaxUsponAlpiniste(maxUsponAlpiniste);
     this.visinaClanarineAlpiniste = visinaClanarineAlpiniste;
   }
 
@@ -48,30 +48,34 @@ public class Alpinista extends Planinar {
     return maxUsponAlpiniste;
   }
   public void setMaxUsponAlpiniste(int maxUsponAlpiniste) {
-    this.maxUsponAlpiniste = maxUsponAlpiniste;
+    if ( maxUsponAlpiniste > 0 )
+      this.maxUsponAlpiniste = maxUsponAlpiniste;
+    else
+      System.out.println("Uneli ste pogresnu vrednost za maksimalan uspon alpiniste!");
   }
 
   public int getVisinaClanarineAlpiniste() {
     return visinaClanarineAlpiniste;
-  }
-  public void setVisinaClanarineAlpiniste(int visinaClanarineAlpiniste) {
-    this.visinaClanarineAlpiniste = visinaClanarineAlpiniste;
   }
 
   // dp: Methods
   @Override
   public void stampaj() {
     System.out.println(
-            "\nAlpinista, id : " + super.getId_planinara() +
+            "\nAlpinista, id : " + super.getIdPlaninara() +
             "\nIme: " + super.getImePlaninara() + " " + super.getPrezimePlaninara() +
             " Broj poena: " + this.getBrojPoenaApliniste()
     );
   }
 
-  // Placa clanarinu u iznosu od 1500, pri tom za svaki poen ima popust od 50,
+// Placa clanarinu u iznosu od 1500, pri tom za svaki poen ima popust od 50.
   @Override
   public int prikaziClanarinuPlaninara() {
-    return getVisinaClanarineAlpiniste() - getBrojPoenaApliniste() * 50;
+    int visinaClanarineZaPlacanje = getVisinaClanarineAlpiniste() - getBrojPoenaApliniste() * 50;
+
+    if ( visinaClanarineZaPlacanje > 0 )
+      return visinaClanarineZaPlacanje;
+    return 0;
   }
 
   @Override
