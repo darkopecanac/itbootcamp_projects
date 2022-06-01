@@ -7,8 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Main {
   public static void main(String[] args) {
-    System.setProperty("webdriver.chrome.driver",
-                       "e:\\_BOOT CAMP\\_QA KURS\\_WORK\\JAVA_PROJECTS\\chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+//                       "e:\\_BOOT CAMP\\_QA KURS\\_WORK\\JAVA_PROJECTS\\chromedriver.exe");
     WebDriver driver = new ChromeDriver();
 
     driver.manage().window().maximize();
