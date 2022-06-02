@@ -1,4 +1,4 @@
-/*
+/* DOMAĆI 31. 05. 2022, 1. ZADATAK:
  *
  * Napisati dva smoke testa za https://www.telerik.com/support/demos:
  *        - Proveriti da klikom na Desktop odlazimo na tu sekciju
