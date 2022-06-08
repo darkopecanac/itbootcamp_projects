@@ -28,11 +28,16 @@ public class Zadatak02 {
 
       selectCategory.selectByVisibleText("Crafts");
 
+      Thread.sleep(5000);
+
+      selectCategory.selectByVisibleText("Art");
+
       WebElement searchInput = driver.findElement(By.id("gh-ac"));
       searchInput.sendKeys("Aquarel");
 
       WebElement searchButton = driver.findElement(By.id("gh-btn"));
       searchButton.click();
+
       Thread.sleep(5000);
     } catch ( InterruptedException ex ) {
       ex.printStackTrace();

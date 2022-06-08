@@ -28,10 +28,12 @@ public class Zadatak05 {
 
     WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-    WebElement toogleElement = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/header/div/div[3]/div[1]/div"));
+    WebElement toogleElement = driver.findElement(By.xpath(
+            "//*[@id=\"app\"]/div/div/header/div/div[3]/div[1]/div"));
     toogleElement.click();
 
-    driverWait.until(ExpectedConditions.attributeContains(By.id("app"), "class", "theme--dark"));
+    driverWait.until(ExpectedConditions.attributeContains(
+            By.id("app"), "class", "theme--dark"));
 
     System.out.println("Dark tema primenjena!");
   }

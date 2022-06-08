@@ -19,7 +19,6 @@ public class Zadatak04b {
 
   public static void main(String[] args) {
 
-    // FLUENT WAIT:
     System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 //                       "e:\\_BOOT CAMP\\_QA KURS\\_WORK\\JAVA_PROJECTS\\chromedriver.exe");
     WebDriver driver = new ChromeDriver();
@@ -27,6 +26,7 @@ public class Zadatak04b {
 
     driver.navigate().to("https://s.bootsnipp.com/iframe/klDWV");
 
+    // FLUENT WAIT:
     Wait<WebDriver> waitDriver = new FluentWait<>(driver)
                                         .withTimeout(Duration.ofSeconds(50))
                                         .pollingEvery(Duration.ofSeconds(2))

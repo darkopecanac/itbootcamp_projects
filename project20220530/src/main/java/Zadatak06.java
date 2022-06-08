@@ -3,7 +3,7 @@
  * Napisti program koji:
  *
  * Ucitava stranicu http://cms.demo.katalon.com/
- * Hvata sve linkove (chart, my account, sampla page, …) iz navigacije
+ * Hvata sve linkove (Cart, Checkout, My Account, Sample Page, …) iz navigacije
  * i vraca listu WebElemenata
  * i ispisuje u konzoli tekst svakog linka
  *
@@ -47,7 +47,8 @@ public class Zadatak06 {
 //      System.out.println(webElement);
 //    }
 
-    List<WebElement> webElements = driver.findElements(By.xpath("//*[@id=\"primary-menu\"]/ul/li/a"));
+    List<WebElement> webElements = driver.findElements(By.xpath(
+            "//*[@id=\"primary-menu\"]/ul/li/a"));
 
     for ( WebElement webElement : webElements ) {
       System.out.println(webElement.getAttribute("href"));

@@ -30,5 +30,11 @@ public class Zadatak04a {
     driverWait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("precent"), "100%"));
 
     System.out.println("Stranica ucitana!");
+
+//        WebElement element = driver.findElement(By.id("precent"));
+//        System.out.println(element.getText());
+//        if(element.getText().equals("100%")){
+//            System.out.println("Stranica je ucitana!");
+//        }
   }
 }
