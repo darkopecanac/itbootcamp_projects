@@ -17,11 +17,12 @@ public class Main {
     String title = driver.getTitle();
     String expected = "Google";
 
-    if (title.equals(expected))
+    if ( title.equals(expected) )
       System.out.println("Validno!");
 
-    WebElement el = driver.findElement(By.xpath(
-            "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input"));
+//    WebElement el = driver.findElement(By.xpath(
+//            "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input"));
+    WebElement el = driver.findElement(By.name("q"));
     el.sendKeys("Selenium Java");
     el.submit();
 

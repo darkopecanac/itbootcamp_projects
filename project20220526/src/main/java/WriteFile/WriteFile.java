@@ -33,9 +33,9 @@ public class WriteFile {
 
       outputStream.close();
     } catch (FileNotFoundException e) {
-      e.printStackTrace();
+        e.printStackTrace();
     } catch (IOException e) {
-      e.printStackTrace();
+        e.printStackTrace();
     }
   }
 }
