@@ -18,7 +18,24 @@
 
 package tests;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 public class Tests extends BaseTests {
 
+  @Test (priority = 1)
+  public void verifyComputerSearch() {
+    getHomePage().openHomePage();
+    getHomePage().searchByString("asci");
+    Assert.assertTrue(getHomePage().searchResult());
+    Assert.assertTrue(getHomePage().sixRowsPresent());
+  }
 
+  @Test (priority = 2)
+  public void verifyAddingNewComputer() {
+    getHomePage().openHomePage();
+    getHomePage().addNewComputer();
+    getNewComputerPage().addNewComputer("Dare");
+    Assert.assertTrue(getNewComputerPage().validateCreationMessage("Dare"));
+  }
 }

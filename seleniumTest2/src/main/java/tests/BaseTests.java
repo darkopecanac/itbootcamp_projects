@@ -35,10 +35,10 @@ public class BaseTests {
     this.newComputerPage = new NewComputerPage(webDriver, webDriverWait);
   }
 
-//  @AfterClass
-//  public void afterClass() {
-//    webDriver.close();
-//  }
+  @AfterClass
+  public void afterClass() {
+    webDriver.close();
+  }
 
 
   public HomePage getHomePage() {
